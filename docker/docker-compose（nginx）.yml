@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx:
+    container_name: nginx              # 指定容器的名称
+    image: nginx:latest          # 指定镜像和版本
+    ports:
+      - "80:8080" #第一个宿主机端口  第二个容器端口
+    volumes:
+      - ./logs/nginx:/var/log/nginx
+      - ./conf/sites-available:/etc/nginx/conf.d
+      - ./conf/nginx.conf:/etc/nginx/nginx.conf
+      - ./www:/home/www  # 挂载宿主机上的www目录到容器里的home目录下方便发布web项目
