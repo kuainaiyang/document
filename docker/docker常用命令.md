@@ -17,6 +17,7 @@
 4. docker stop 容器id #停止容器
 5. docker restart 容器id #重启容器
 6. docker kill 容器id #强制停止容器
+7. docker start $(docker ps -a | awk '{ print $1}' | tail -n +2) 启动所有容器
 
 **docker run 参数说明**
  1. --name='name'  #容器名称
@@ -49,5 +50,8 @@
 4. docker-compose up       启动服务
 5. docker-compose  logs -f  查看日志
 6. docker load -i 载入文件
+7. docker-compose restart
 
-
+### Docker磁盘清理
+1. docker system df    查看Docker的磁盘使用情况
+2. docker system df -v 每个容器占用的磁盘空间呢
