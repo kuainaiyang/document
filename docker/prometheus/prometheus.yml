@@ -1,0 +1,25 @@
+#https://prometheus.io/download/ 下载地址
+# global是一些常规的全局配置，这里只列出了两个参数：
+global:
+  scrape_interval:     5s #每5s采集一次数据
+  evaluation_interval: 5s #每15s做一次告警检测
+
+#报警管理器
+#alerting:
+#  alertmanagers:
+#  - static_configs:
+#    - targets:
+#      - alertmanager:9093
+
+# rule_files指定加载的告警规则文件.
+# rule_files:
+#   - "*rules.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['localhost:9090']
+
+  - job_name: 'node'
+    static_configs:
+    - targets: ['localhost:9100']

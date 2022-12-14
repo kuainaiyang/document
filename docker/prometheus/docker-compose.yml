@@ -1,0 +1,13 @@
+version: '3'
+services:
+  prometheus:
+    container_name: prometheus              # 指定容器的名称
+    image: prom/prometheus:latest          # 指定镜像和版本
+    ports:
+      - "9090:9090" #第一个宿主机端口  第二个容器端口
+    volumes:
+      - ./conf:/etc/prometheus
+      - ./data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
