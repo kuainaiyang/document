@@ -12,7 +12,7 @@ docker exec -it mongo mongo admin
 // 添加管理员用户
 db.createUser({ user:'admin',pwd:'123456',roles:[ { role:'userAdminAnyDatabase', db: 'admin'}]});
 // 认证
-db.auth('admin', '123456')
+ db.auth('admin', '123456')
 
 // 创建test库
 use test
@@ -33,3 +33,30 @@ db.auth('wdk-radiation-area', 'Radiation2022')
 show users
 
 https://blog.csdn.net/qq_43021786/article/details/125429982
+  947  ls -l
+  948  mongo -u admin -p
+  949  cat /etc/mongod.conf
+  950  mongo -u admin -p
+  951  mongo -u wdk-radiation-area -p
+  952  mongo -u wdk-radiation-area -p Radiation2022
+  953  mongo -u wdk-radiation-area -p Radiation2022 loalhost/radiation_area
+  954  mongo -u wdk-radiation-area -p Radiation2022 139.196.136.106:27017/radiation_area
+  955  mongo -u root -p Radiation2022 139.196.136.106:27017/radiation_area
+  956  mongo -u root -p 123456 139.196.136.106:27017/radiation_area
+  957  mongo -u admin -p Radiation2022 139.196.136.106:27017/radiation_area
+  958  mongo -u admin -p 123456 139.196.136.106:27017/radiation_area
+  959  mongo -u admin -p Wdkroot1 139.196.136.106:27017/radiation_area
+  960  mongo -u wdk-radiation-area -p Radiation2022 139.196.136.106:27017/radiation_area
+  961  clear
+  962  history
+  963   mongo --authenticationDatabase admin -u admin -p Wdkadmin1
+  964  mongo --authenticationDatabase admin -u admin -p Wdkadmin1
+  965  mongo -u admin -p Wdkadmin1 139.196.136.106:27017/radiation_area
+  966  mongo -u admin -p Wdkadmin1 139.196.136.106:27017
+  967  mongo -u admin -p Wdkadmin1
+  968  mongo -u admin -p
+  969  
+  970  docker ps
+
+
+  /var/log/mongodb
